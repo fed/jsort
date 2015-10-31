@@ -17,7 +17,12 @@
   "main": "sort.js",
   "dependencies": {},
   "devDependencies": {
-    "jest-cli": "^0.6.1"
+    "grunt": "^0.4.5",
+    "grunt-bump": "^0.6.0",
+    "grunt-git-committers": "^0.1.4",
+    "grunt-templated-changelog": "^0.1.3",
+    "jest-cli": "^0.6.1",
+    "load-grunt-config": "^0.18.0"
   },
   "jest": {
     "testDirectoryName": "tests",
