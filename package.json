@@ -1,0 +1,28 @@
+{
+  "name": "jsort",
+  "version": "0.0.0",
+  "description": "Simple array sorting utility supporting multiple data types",
+  "license": "MIT",
+  "author": {
+    "name": "Federico Knüssel",
+    "email": "fknussel@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fknussel/jsort.git"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "main": "sort.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jest-cli": "^0.6.1"
+  },
+  "jest": {
+    "testDirectoryName": "tests",
+    "verbose": true,
+    "collectCoverage": true,
+    "rootDir": "./tests"
+  }
+}
