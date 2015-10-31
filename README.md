@@ -8,6 +8,14 @@ Simple array sorting utility supporting multiple data types.
 npm test
 ```
 
+## Generate AMD dist file
+
+This Grunt task wraps the module into the [simplified CommonJS wrapper format](https://github.com/amdjs/amdjs-api/wiki/AMD#simplified-commonjs-wrapping-). More info [here](http://requirejs.org/docs/commonjs.html).
+
+```
+grunt amdwrap
+```
+
 ## Release Versions
 
 This repo uses [grunt-bump](https://github.com/gruntjs/grunt-bump) and Semantic Versioning to version and tag releases. To release a new version, run the appropriate command:

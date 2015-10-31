@@ -14,10 +14,13 @@
   "scripts": {
     "test": "jest"
   },
-  "main": "sort.js",
-  "dependencies": {},
+  "main": "jsort.js",
+  "dependencies": {
+    "chalk": "^1.1.1"
+  },
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-amd-wrap": "^1.0.1",
     "grunt-bump": "^0.6.0",
     "grunt-git-committers": "^0.1.4",
     "grunt-templated-changelog": "^0.1.3",
