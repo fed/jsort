@@ -1,4 +1,13 @@
 
+# 1.0.0
+
+- Update docs and code samples with new features `ef76b2a`
+- Add support for any currency `8726818`
+- Add ability to sort collections of objects by key `03b7903`
+- Add jshint and build Grunt tasks `cc55b97`
+- Fix Jest configuration `695538b`
+- Update module API `169ebea`
+
 # 0.1.1
 
 - Add extra unit tests `64c2510`
