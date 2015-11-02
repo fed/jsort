@@ -1,42 +1,35 @@
 define(function (require, exports, module) {
-  module.exports = function (collection, type, reverse) {
-    var reverse = reverse || false,
-        compareText = require('./utils/compare-text'),
-        compareNumber = require('./utils/compare-number'),
-        compareCurrency = require('./utils/compare-currency'),
-        compareDate = require('./utils/compare-date');
+  module.exports = {
+    text: function (collection) {
+      var compareText = require('./utils/compare-text');
 
-    collection.sort(function (a, b) {
-      var result;
+      return collection.sort(function (a, b) {
+        return compareText(a, b);
+      });
+    },
 
-      switch (type) {
-        case 'text':
-          result = compareText(a, b);
-          break;
+    numeric: function (collection) {
+      var compareNumeric = require('./utils/compare-numeric');
 
-        case 'number':
-          result = compareNumber(a, b);
-          break;
+      return collection.sort(function (a, b) {
+        return compareNumeric(a, b);
+      });
+    },
 
-        case 'currency':
-          result = compareCurrency(a, b);
-          break;
+    currency: function (collection, reverse) {
+      var compareCurrency = require('./utils/compare-currency');
 
-        case 'date':
-          result = compareDate(a, b);
-          break;
+      return collection.sort(function (a, b) {
+        return compareCurrency(a, b);
+      });
+    },
 
-        default:
-          result = compareText(a, b);
-      }
+    date: function (collection, reverse) {
+      var compareDate = require('./utils/compare-date');
 
-      return result;
-    });
-
-    if (reverse) {
-      collection.reverse();
+      return collection.sort(function (a, b) {
+        return compareDate(a, b);
+      });
     }
-
-    return collection;
   };
 });
