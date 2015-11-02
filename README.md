@@ -17,10 +17,10 @@ jsort has built-in support for both AMD and CommonJS module formats.
 Available data types include: `text`, `numeric`, `currency` and `date`. Default sorting order is `ASC`.
 
 ```js
-jsort.text(['Australia', 'Andorra', 'Argentina']); // returns ['Andorra', 'Argentina', 'Australia']
-jsort.numeric([2.01, 1.3555, 3]); // returns 
-jsort.currency(['$1,726.75', '$1,726.50', '$1,720.99']); // returns 
-jsort.date(['01/31/2015', '01/30/2015', '01/31/2016']); // returns 
+jsort.text(['Argentina', Australia', 'New Zealand', 'Ireland', 'Canada']);
+jsort.numeric([2.01, 1.3555, 3]);
+jsort.currency(['$1,726.75', '$1,726.50', '$1,720.99']);
+jsort.date(['01/31/2015', '01/30/2015', '01/31/2016']);
 ```
 
 ### jsort.`<dataType>(array).reverse()`

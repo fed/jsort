@@ -16,7 +16,7 @@ define(function (require, exports, module) {
       });
     },
 
-    currency: function (collection, reverse) {
+    currency: function (collection) {
       var compareCurrency = require('./utils/compare-currency');
 
       return collection.sort(function (a, b) {
@@ -24,7 +24,7 @@ define(function (require, exports, module) {
       });
     },
 
-    date: function (collection, reverse) {
+    date: function (collection) {
       var compareDate = require('./utils/compare-date');
 
       return collection.sort(function (a, b) {

@@ -1,5 +1,5 @@
-var jsort = require('./jsort');
 var chalk = require('chalk');
+var jsort = require('./jsort');
 
 // Strings
 var countries = ['Australia', 'Argentina', 'New Zealand', 'Austria', 'Canada'];

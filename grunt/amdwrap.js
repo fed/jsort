@@ -1,5 +1,8 @@
-module.exports = function (grunt, options) {
+module.exports = function () {
   return {
-    all: { src: 'jsort.js', dest: 'jsort.amd.js' }
+    all: {
+      src: 'src/jsort.js',
+      dest: 'src/jsort.amd.js'
+    }
   };
 };

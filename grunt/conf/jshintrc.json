@@ -1,0 +1,21 @@
+{
+  "debug": true,
+  "curly": true,
+  "eqnull": true,
+  "eqeqeq": true,
+  "undef": true,
+  "unused": true,
+  "laxbreak": true,
+  "laxcomma": true,
+  "esnext": true,
+  "globals": {
+    "module": true,
+    "define": true,
+    "require": true,
+    "console": true,
+    "jest": true,
+    "describe": true,
+    "it": true,
+    "expect": true
+  }
+}
