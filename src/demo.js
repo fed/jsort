@@ -36,3 +36,15 @@ var sales = ['$1,726.75', '$1,726.50', '$1,720.99'];
 console.log('\n' + chalk.white.bgCyan.bold('Sorting a collection of currencies'));
 console.log('Sorted currencies: ', jsort.currency(sales));
 console.log('Reverse-sorted currencies: ', jsort.currency(sales).reverse());
+
+// Objects
+var employees = [
+  { age: 25, dob: '01/01/2010', salary: '$100,000.00', name: 'Ted' },
+  { age: 10, dob: '01/01/2001', salary: '$80,000.00', name: 'Mario' },
+  { age: 50, dob: '01/01/2009', salary: '$75,000.00', name: 'Homer' }
+];
+console.log('\n' + chalk.white.bgCyan.bold('Sorting a collection of objects by key'));
+console.log('Employees sorted by name: ', jsort.text(employees, 'name'));
+console.log('Employees sorted by age: ', jsort.numeric(employees, 'age'));
+console.log('Employees sorted by salary: ', jsort.currency(employees, 'salary'));
+console.log('Employees sorted by date of birth: ', jsort.date(employees, 'dob'));

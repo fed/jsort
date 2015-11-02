@@ -12,7 +12,7 @@ npm install --save jsort
 
 jsort has built-in support for both AMD and CommonJS module formats.
 
-### jsort.`<dataType>(array)`
+### jsort.`<dataType>(array [, key])`
 
 Available data types include: `text`, `numeric`, `currency` and `date`. Default sorting order is `ASC`.
 
@@ -23,7 +23,13 @@ jsort.currency(['$1,726.75', '$1,726.50', '$1,720.99']);
 jsort.date(['01/31/2015', '01/30/2015', '01/31/2016']);
 ```
 
-### jsort.`<dataType>(array).reverse()`
+When a key gets passed in, jsort assumes the collection contains objects and will try to sort them by the key provided:
+
+```js
+jsort.numeric([{name: 'Homer', age: 40}, {name: 'Marge', age: 35}, {name: 'Bart', age: 10}], 'age');
+```
+
+### jsort.`<dataType>(array [, key]).reverse()`
 
 Reverse sort any array (`DESC`) by using the `.reverse()` method:
 
@@ -34,15 +40,21 @@ jsort.text(['I', 'am', 'Yoda']).reverse(); // returns ['Yoda', 'I', 'am']
 ## Run Tests
 
 ```
+grunt test
+```
+
+or
+
+```
 npm test
 ```
 
-## Generate AMD dist file
+## Build
 
-This Grunt task wraps the module into the [simplified CommonJS wrapper format](https://github.com/amdjs/amdjs-api/wiki/AMD#simplified-commonjs-wrapping-). More info [here](http://requirejs.org/docs/commonjs.html).
+This Grunt task will run [jshint](https://github.com/jshint/jshint) on all of the code, run all of the unit tests and also wrap the module into the [simplified CommonJS wrapper format](https://github.com/amdjs/amdjs-api/wiki/AMD#simplified-commonjs-wrapping-).
 
 ```
-grunt amdwrap
+grunt build
 ```
 
 ## Release Versions
