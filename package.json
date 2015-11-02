@@ -28,9 +28,10 @@
     "load-grunt-config": "^0.18.0"
   },
   "jest": {
+    "rootDir": ".",
     "testDirectoryName": "tests",
+    "testPathDirs": ["."],
     "verbose": true,
-    "collectCoverage": true,
-    "rootDir": "./tests"
+    "collectCoverage": true
   }
 }

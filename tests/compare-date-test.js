@@ -1,6 +1,6 @@
-jest.dontMock('../utils/compare-date');
+jest.autoMockOff();
 
-var compareDate = require('../utils/compare-date');
+var compareDate = require('../src/utils/compare-date');
 
 describe('compare-date', function () {
   it('compares dates in MM/DD/YYYY format', function () {

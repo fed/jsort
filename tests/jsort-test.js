@@ -1,6 +1,6 @@
-jest.dontMock('../jsort');
+jest.autoMockOff();
 
-var jsort = require('../jsort');
+var jsort = require('../src/jsort');
 
 describe('jsort', function () {
   it('sorts numeric arrays properly', function () {

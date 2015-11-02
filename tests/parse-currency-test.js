@@ -1,6 +1,6 @@
-jest.dontMock('../utils/parse-currency');
+jest.autoMockOff();
 
-var parseCurrency = require('../utils/parse-currency');
+var parseCurrency = require('../src/utils/parse-currency');
 
 describe('parse-currency', function () {
   it('parses currency properly', function () {

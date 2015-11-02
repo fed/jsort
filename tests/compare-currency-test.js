@@ -1,6 +1,6 @@
-jest.dontMock('../utils/compare-currency');
+jest.autoMockOff();
 
-var compareCurrency = require('../utils/compare-currency');
+var compareCurrency = require('../src/utils/compare-currency');
 
 describe('compare-currency', function () {
   it('compares amounts in the same currency', function () {

@@ -1,6 +1,6 @@
-jest.dontMock('../utils/compare-numeric');
+jest.autoMockOff();
 
-var compareNumber = require('../utils/compare-numeric');
+var compareNumber = require('../src/utils/compare-numeric');
 
 describe('compare-number', function () {
   it('compares integers properly', function () {

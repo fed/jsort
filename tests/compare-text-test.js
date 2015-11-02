@@ -1,6 +1,6 @@
-jest.dontMock('../utils/compare-text');
+jest.autoMockOff();
 
-var compareText = require('../utils/compare-text');
+var compareText = require('../src/utils/compare-text');
 const BEFORE = -1;
 const AFTER = 1;
 const THE_SAME = 0;
