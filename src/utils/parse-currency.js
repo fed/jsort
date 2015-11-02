@@ -1,3 +1,3 @@
 module.exports = function (currency) {
-  return Number(currency.replace(/[$€£,]+/g, ''));
+  return Number(currency.replace(/[^0-9\.\-]+/g, ''));
 };
