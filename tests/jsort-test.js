@@ -25,4 +25,11 @@ describe('jsort', function () {
     expect(jsort.date(['01/31/2015', '01/30/2015', '01/31/2016'])).toEqual(['01/30/2015', '01/31/2015', '01/31/2016']);
     expect(jsort.date(['2015-02-04', '2015-02-02', '2017-02-01']).reverse()).toEqual(['2017-02-01', '2015-02-04', '2015-02-02']);
   });
+
+  it('sorts collections of objects properly', function () {
+    expect(jsort.text([{age:25,name:'Ted'}, {age:10,name:'Mario'}, {age:50,name:'Homer'}], 'name')).toEqual([{age:50,name:'Homer'}, {age:10,name:'Mario'}, {age:25,name:'Ted'}]);
+    expect(jsort.numeric([{age:25,name:'Ted'}, {age:10,name:'Mario'}, {age:50,name:'Homer'}], 'age')).toEqual([{age:10,name:'Mario'}, {age:25,name:'Ted'}, {age:50,name:'Homer'}]);
+    expect(jsort.currency([{salary:'$100,000.00',name:'Ted'}, {salary:'$80,000.00',name:'Mario'}, {salary:'$75,000.00',name:'Homer'}], 'salary')).toEqual([{salary:'$75,000.00',name:'Homer'}, {salary:'$80,000.00',name:'Mario'}, {salary:'$100,000.00',name:'Ted'}]);
+    expect(jsort.date([{dob:'01/01/2010',name:'Ted'}, {dob:'01/01/2001',name:'Mario'}, {dob:'01/01/2009',name:'Homer'}], 'dob')).toEqual([{dob:'01/01/2001',name:'Mario'}, {dob:'01/01/2009',name:'Homer'}, {dob:'01/01/2010',name:'Ted'}]);
+  });
 });
