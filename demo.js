@@ -32,7 +32,7 @@ console.log('Sorted dates: ', jsort(moreDates, 'date'));
 console.log('Reverse-sorted dates: ', jsort(moreDates, 'date', true));
 
 // Currency
-var sales = ['$1726,75', '$1726,50', '$1720,99'];
+var sales = ['$1,726.75', '$1,726.50', '$1,720.99'];
 console.log('\n' + chalk.white.bgCyan.bold('Sorting a collection of currencies'));
 console.log('Sorted currencies: ', jsort(sales, 'currency'));
 console.log('Reverse-sorted currencies: ', jsort(sales, 'currency', true));
