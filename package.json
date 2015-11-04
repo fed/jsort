@@ -1,6 +1,6 @@
 {
   "name": "jsort",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple array sorting utility supporting multiple data types",
   "keywords": [
     "sort",

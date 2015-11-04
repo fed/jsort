@@ -1,4 +1,8 @@
 
+# 1.0.1
+
+- Support sorting dates in a variety of formats `44a51eb`
+
 # 1.0.0
 
 - Update docs and code samples with new features `ef76b2a`
