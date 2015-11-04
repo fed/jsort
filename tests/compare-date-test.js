@@ -23,4 +23,9 @@ describe('compare-date', function () {
     expect(compareDate('2017-12-25', '2017-12-25')).toBe(0);
     expect(compareDate('1990-01-31', '1990-01-31')).toBe(0);
   });
+
+  it('compares dates in different formats', function () {
+    expect(compareDate('January 31, 2014', 'Sat, Jan 3, 2015') < 0).toBe(true);
+    expect(compareDate('2015-01-31', '01/30/2015') > 0).toBe(true);
+  });
 });

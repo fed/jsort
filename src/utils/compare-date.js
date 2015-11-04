@@ -1,3 +1,4 @@
 module.exports = function (a, b) {
-  return new Date(a) - new Date(b);
+  var parseDate = require('./parse-date');
+  return parseDate(a) - parseDate(b);
 };
