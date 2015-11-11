@@ -1,4 +1,10 @@
 
+# 1.0.2
+
+- Merge pull request #1 from fknussel/develop `acf1d7f`
+- Fix parse-date unit tests `9f5922e`
+- Integrate with Travis CI `e08891c`
+
 # 1.0.1
 
 - Support sorting dates in a variety of formats `44a51eb`
