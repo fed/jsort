@@ -1,4 +1,4 @@
-# jsort
+# jsort [![Build Status](https://travis-ci.org/fknussel/jsort.svg)](https://travis-ci.org/fknussel/jsort)
 
 Simple array sorting utility supporting multiple data types.
 
@@ -43,9 +43,15 @@ jsort.text(['I', 'am', 'Yoda']).reverse(); // returns ['Yoda', 'I', 'am']
 grunt test
 ```
 
+If you don't want to install `grunt-cli` globally, you can also run:
+
+```
+npm test
+```
+
 ## Build
 
-This Grunt task will run [jshint](https://github.com/jshint/jshint) on all of the code, run all of the unit tests and also wrap the module into the [simplified CommonJS wrapper format](https://github.com/amdjs/amdjs-api/wiki/AMD#simplified-commonjs-wrapping-).
+This Grunt task will run [JSHint](https://github.com/jshint/jshint) on all of the code, run all of the unit tests and also wrap the module into the [simplified CommonJS wrapper format](https://github.com/amdjs/amdjs-api/wiki/AMD#simplified-commonjs-wrapping-).
 
 ```
 grunt build
