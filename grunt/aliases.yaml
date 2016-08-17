@@ -1,7 +1,0 @@
-build:
-  - 'jshint'
-  - 'jest'
-  - 'amdwrap'
-test:
-  - 'jshint'
-  - 'jest'

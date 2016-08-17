@@ -1,7 +1,0 @@
-{
-  "rootDir": "../../",
-  "testDirectoryName": "tests",
-  "testPathDirs": ["."],
-  "verbose": true,
-  "collectCoverage": true
-}

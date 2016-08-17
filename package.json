@@ -2,6 +2,8 @@
   "name": "jsort",
   "version": "1.0.2",
   "description": "Simple array sorting utility supporting multiple data types",
+  "main": "src/jsort.js",
+  "license": "MIT",
   "keywords": [
     "sort",
     "array sorting",
@@ -10,7 +12,6 @@
     "sort numbers",
     "sort text"
   ],
-  "license": "MIT",
   "author": {
     "name": "Federico Knüssel",
     "email": "fknussel@gmail.com"
@@ -20,20 +21,11 @@
     "url": "https://github.com/fknussel/jsort.git"
   },
   "scripts": {
-    "test": "./node_modules/grunt-cli/bin/grunt test"
+    "eslint": "./node_modules/.bin/eslint ./src/",
+    "test": "./node_modules/.bin/jest --no-cache --verbose"
   },
-  "main": "src/jsort.js",
-  "dependencies": {},
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-amd-wrap": "^1.0.1",
-    "grunt-bump": "^0.6.0",
-    "grunt-cli": "^0.1.13",
-    "grunt-contrib-jshint": "^0.11.3",
-    "grunt-git-committers": "^0.1.4",
-    "grunt-jest": "^0.2.0",
-    "grunt-templated-changelog": "^0.1.3",
-    "jest-cli": "^0.7.0",
-    "load-grunt-config": "^0.18.0"
+    "eslint": "^3.3.1",
+    "jest-cli": "^14.1.0"
   }
 }

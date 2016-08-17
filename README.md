@@ -10,8 +10,6 @@ npm install --save jsort
 
 ## Usage
 
-jsort has built-in support for both AMD and CommonJS module formats.
-
 ### jsort.`<dataType>(array [, key])`
 
 Available data types include: `text`, `numeric`, `currency` and `date`. Default sorting order is `ASC`.
@@ -37,42 +35,20 @@ Reverse sort any array (`DESC`) by using the `.reverse()` method:
 jsort.text(['I', 'am', 'Yoda']).reverse(); // returns ['Yoda', 'I', 'am']
 ```
 
-## Run Tests
-
-```
-grunt test
-```
-
-If you don't want to install `grunt-cli` globally, you can also run:
+## Run Test Suite
 
 ```
 npm test
 ```
 
-## Build
-
-This Grunt task will run [JSHint](https://github.com/jshint/jshint) on all of the code, run all of the unit tests and also wrap the module into the [simplified CommonJS wrapper format](https://github.com/amdjs/amdjs-api/wiki/AMD#simplified-commonjs-wrapping-).
-
-```
-grunt build
-```
-
 ## Release Versions
 
-This repo uses [grunt-bump](https://github.com/gruntjs/grunt-bump) and Semantic Versioning to version and tag releases. To release a new version, run the appropriate command:
-
-```
-grunt release:major       # bump major version, eg. 1.0.2 -> 2.0.0
-grunt release:minor       # bump minor version, eg. 0.1.3 -> 0.2.0
-grunt release:patch       # bump patch version, eg. 0.0.1 -> 0.0.2
-grunt release:prerelease  # bump pre-release version, eg. 1.0.0 -> 1.0.0-1
-```
-
-Make sure to push tags:
-
-```
-git push --tags origin master
-```
+1. `git fetch`
+2. `git checkout develop && git reset --hard origin/develop`
+3. `npm version [<newversion> | major | minor | patch]`
+4. `git checkout master && git reset --hard origin/master`
+5. `git merge develop`
+6. `git push --tags && git push && git checkout develop && git push`
 
 Publish the package to [npm's public registry](https://www.npmjs.com/):
 
@@ -92,10 +68,6 @@ Given a version number `MAJOR.MINOR.PATCH`, increment the:
 2. `MINOR` version when you add functionality in a backwards-compatible manner, and
 3. `PATCH` version when you make backwards-compatible bug fixes.
 
-Additional labels for pre-release and build metadata are available as extensions to the `MAJOR.MINOR.PATCH` format.
+Additional labels for pre-release and build metadata [are available](https://docs.npmjs.com/cli/version) as extensions to the `MAJOR.MINOR.PATCH` format.
 
 See the [Semantic Versioning](http://semver.org/) specification for more information.
-
-## Release History
-
-See the [CHANGELOG](CHANGELOG.md).
