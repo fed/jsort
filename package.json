@@ -2,7 +2,7 @@
   "name": "jsort",
   "version": "1.0.2",
   "description": "Simple array sorting utility supporting multiple data types",
-  "main": "src/jsort.js",
+  "main": "lib/jsort.js",
   "license": "MIT",
   "keywords": [
     "sort",
@@ -21,11 +21,17 @@
     "url": "https://github.com/fknussel/jsort.git"
   },
   "scripts": {
-    "eslint": "./node_modules/.bin/eslint ./src/",
-    "test": "./node_modules/.bin/jest --no-cache --verbose"
+    "lint": "./node_modules/.bin/eslint ./src/",
+    "build": "./node_modules/.bin/webpack -p --progress",
+    "test": "./node_modules/.bin/jest --no-cache --verbose --coverage"
   },
   "devDependencies": {
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.13.2",
     "eslint": "^3.3.1",
-    "jest-cli": "^14.1.0"
+    "eslint-loader": "^1.5.0",
+    "jest-cli": "^14.1.0",
+    "webpack": "^1.13.1"
   }
 }
