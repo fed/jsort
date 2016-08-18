@@ -23,15 +23,17 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint ./src/",
     "build": "./node_modules/.bin/webpack -p --progress",
-    "test": "./node_modules/.bin/jest --no-cache --verbose --coverage"
+    "test": "mocha --compilers js:babel-core/register --colors -w ./test/*.js"
   },
   "devDependencies": {
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.13.2",
+    "chai": "^3.5.0",
     "eslint": "^3.3.1",
     "eslint-loader": "^1.5.0",
-    "jest-cli": "^14.1.0",
+    "lodash": "^4.15.0",
+    "mocha": "^3.0.2",
     "webpack": "^1.13.1"
   }
 }
