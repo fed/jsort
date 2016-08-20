@@ -1,6 +1,6 @@
 {
   "name": "jsort",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple array sorting utility supporting multiple data types",
   "main": "lib/jsort.js",
   "license": "MIT",
