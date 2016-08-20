@@ -8,40 +8,120 @@ Simple array sorting utility supporting multiple data types.
 npm install --save jsort
 ```
 
-## Usage
-
-### jsort.`<dataType>(array [, key])`
-
-Available data types include: `text`, `numeric`, `currency` and `date`. Default sorting order is `ASC`.
+Then import it into your project by doing:
 
 ```js
-jsort.text(['Argentina', 'Australia', 'New Zealand', 'Ireland', 'Canada']);
-jsort.numeric([2.01, 1.3555, 3, 1990]);
-jsort.currency(['$1,726', '$3,021,726.00', '$120.75']);
-jsort.date(['2015-01-31', '01/30/2015', 'Sat, Jan 3, 2015', 'January 31, 2014']);
+// If your project supports ES6
+import jsort from 'jsort';
+
+// The good old way
+var jsort = require('jsort').default;
 ```
+
+## Usage
+
+Available data types include:
+
+* strings
+* numeric values of any time (integers, floats, etc.)
+* currency values (things like `€1.23`, `$1.23`, `£1.23`, `AUD 1.23`, etc.)
+* dates in the following formats:
+  - `@TODO`
+
+Default sorting order is `ASC`.
+
+### jsort.data(`<array>`).sort()
+
+```js
+jsort
+  .data(['Australia', 'Argentina', 'New Zealand', 'Ireland', 'Canada'])
+  .sort();
+
+// Returns ['Argentina', 'Australia', 'Canada', 'Ireland', 'New Zealand']
+
+jsort
+  .data([2.01, 1990, 1.3555, 3])
+  .sort();
+
+// Returns [1.3555, 2.01, 3, 1990]
+
+jsort
+  .data(['$1,726', '$3,021,726.00', '$120.75'])
+  .sort();
+
+// Returns ['$120.75', '$1,726', '$3,021,726.00']
+
+jsort
+  .data(['2015-01-31', '01/30/2015', 'Sat, Jan 3, 2015', 'January 31, 2014'])
+  .sort();
+
+// Returns ['January 31, 2014', 'Sat, Jan 3, 2015', '01/30/2015', '2015-01-31']
+```
+
+### jsort.data(`<array>`).desc().sort()
+
+Reverse sort any array (`DESC`) by chaining the `.desc()` method:
+
+```js
+jsort
+  .data(['I', 'am', 'Yoda'])
+  .desc()
+  .sort();
+
+// Returns ['Yoda', 'I', 'am']
+```
+
+### jsort.data(`<array>`).limit(`<integer>`).sort()
+
+Limit the amount of elements in the sorted array by chaining the `.limit()` method, passing in the number of elements to keep:
+
+```js
+jsort
+  .data(['Sydney', 'Melbourne', 'Brisbane', 'Perth', 'Adelaide', 'Canberra'])
+  .limit(2)
+  .sort();
+
+// Returns ['Adelaide', 'Brisbane']
+```
+
+### jsort.data(`<array>`).by(`<object-key>`).sort()
 
 When a key gets passed in, jsort assumes the collection contains objects and will try to sort them by the key provided:
 
 ```js
-jsort.numeric([{name: 'Homer', age: 40}, {name: 'Marge', age: 35}], 'age');
+jsort
+  .data([
+    {name: 'Homer', age: 40},
+    {name: 'Marge', age: 35},
+    {name: 'Bart', age: 9}
+  ])
+  .by('age')
+  .sort();
+
+// Returns [{name: 'Bart', age: 9}, {name: 'Marge', age: 35}, {name: 'Homer', age: 40}]
 ```
 
-### jsort.`<dataType>(array [, key]).reverse()`
+## Development Tasks
 
-Reverse sort any array (`DESC`) by using the `.reverse()` method:
-
-```js
-jsort.text(['I', 'am', 'Yoda']).reverse(); // returns ['Yoda', 'I', 'am']
-```
-
-## Run Test Suite
-
-```
-npm test
-```
+| Command             | Description                                                         |
+|---------------------|---------------------------------------------------------------------|
+| `npm install`       | Fetch dependencies                                                  |
+| `npm run lint`      | Lint all the files in the `src/` folder                             |
+| `npm run transpile` | Transpile all ES6 code in the `src/` folder to ES5 code into `lib/` |
+| `npm run build`     | Lint files, run tests and generate transpiled `lib` folder          |
+| `npm test`          | Run test suite                                                      |
 
 ## Release Versions
+
+Always build the `lib` folder before bumping a new version:
+
+```
+npm run build
+```
+
+This will lint all the files, run the tests and transpile the ES6 code from `/src` into `/lib`.
+
+After this, you are good to bump a new version and push it to GitHub:
 
 1. `git fetch`
 2. `git checkout develop && git reset --hard origin/develop`
@@ -50,7 +130,7 @@ npm test
 5. `git merge develop`
 6. `git push --tags && git push && git checkout develop && git push`
 
-Publish the package to [npm's public registry](https://www.npmjs.com/):
+Finally, publish the package to [npm's public registry](https://www.npmjs.com/):
 
 ```
 npm publish

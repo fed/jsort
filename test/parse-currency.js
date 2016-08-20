@@ -9,5 +9,9 @@ describe('Currency Parser', () => {
     expect(parseCurrency('$0.00')).to.equal(0);
     expect(parseCurrency('€0.00')).to.equal(0);
     expect(parseCurrency('£0.00')).to.equal(0);
+    expect(parseCurrency('AUD 1.23')).to.equal(1.23);
+    expect(parseCurrency('NZD 3,546.00')).to.equal(3546);
+    expect(parseCurrency('USD 1,003,312.25')).to.equal(1003312.25);
+    expect(parseCurrency('EUR 1')).to.equal(1);
   });
 });
