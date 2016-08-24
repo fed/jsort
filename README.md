@@ -1,4 +1,4 @@
-# jsort [![Build Status](https://travis-ci.org/fknussel/jsort.svg)](https://travis-ci.org/fknussel/jsort)
+# jsort [![Build Status](https://travis-ci.org/fknussel/jsort.svg?branch=master)](https://travis-ci.org/fknussel/jsort)
 
 Simple array sorting utility supporting multiple data types.
 
