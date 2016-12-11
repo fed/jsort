@@ -2,11 +2,15 @@
   "name": "jsort",
   "version": "1.0.3",
   "description": "Simple array sorting utility supporting multiple data types",
-  "main": "lib/jsort.js",
+  "main": "./lib/jsort.js",
   "license": "MIT",
   "keywords": [
+    "jsort",
     "sort",
+    "sorting",
     "array sorting",
+    "sort array",
+    "sort list",
     "sort currency",
     "sort dates",
     "sort numbers",
@@ -21,11 +25,12 @@
     "url": "https://github.com/fknussel/jsort.git"
   },
   "scripts": {
-    "clean": "./node_modules/.bin/rimraf ./lib",
-    "lint": "./node_modules/.bin/eslint ./src",
-    "transpile": "./node_modules/.bin/babel src -d lib",
-    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register --colors ./test/*.js",
-    "build": "npm run clean && npm run lint && npm run test && npm run transpile"
+    "clean": "rimraf ./lib",
+    "eslint": "eslint ./src ./test",
+    "babel": "babel ./src -d ./lib",
+    "mocha": "mocha --compilers js:babel-core/register --colors ./test/**/*.js",
+    "build": "npm run clean && npm run eslint && npm run babel",
+    "test": "npm run build && npm run mocha"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",

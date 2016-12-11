@@ -1,10 +1,15 @@
-import {sortText, sortNumeric, sortCurrency, sortDate} from './utils/sorters';
+import {
+  sortText as text,
+  sortNumeric as numeric,
+  sortCurrency as currency,
+  sortDate as date
+} from './utils/sorters';
 
 const jsort = {
-  text: sortText,
-  numeric: sortNumeric,
-  currency: sortCurrency,
-  date: sortDate
+  text,
+  numeric,
+  currency,
+  date
 };
 
 export default jsort;
