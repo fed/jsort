@@ -5,8 +5,11 @@
   "main": "lib/jsort.js",
   "license": "MIT",
   "keywords": [
+    "jsort",
     "sort",
+    "sorting",
     "array sorting",
+    "sort arrays",
     "sort currency",
     "sort dates",
     "sort numbers",
@@ -22,10 +25,8 @@
   },
   "scripts": {
     "clean": "./node_modules/.bin/rimraf ./lib",
-    "lint": "./node_modules/.bin/eslint ./src",
-    "transpile": "./node_modules/.bin/babel src -d lib",
-    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register --colors ./test/*.js",
-    "build": "npm run clean && npm run lint && npm run test && npm run transpile"
+    "build": "webpack",
+    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register --colors ./test/*.js"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
@@ -35,6 +36,9 @@
     "eslint": "^3.3.1",
     "lodash": "^4.15.0",
     "mocha": "^3.0.2",
-    "rimraf": "^2.5.4"
+    "rimraf": "^2.5.4",
+    "ts-loader": "^0.8.2",
+    "tslint": "^3.15.1",
+    "typescript": "^2.0.3"
   }
 }

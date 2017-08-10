@@ -1,6 +1,6 @@
 import {expect} from 'chai';
 import isEqual from 'lodash/isEqual';
-import jsort from '../src/jsort';
+import jsort from '../lib/jsort';
 
 describe('jsort', () => {
   it('sorts numeric arrays properly', () => {

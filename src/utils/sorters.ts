@@ -1,6 +1,12 @@
 import {compareText, compareNumeric, compareCurrency, compareDate} from './comparators';
 
-export function sortText(collection, key) {
+/**
+ * Sorts two strings
+ * @param  {Array<string>} collection List of strings we want to sort
+ * @param  {string}        key        If
+ * @return {Array<string>}            Sorted array
+ */
+export function sortText(collection: Array<string>, key?: string): Array<string> {
   return collection.sort((a, b) => {
     if (key) {
       a = a[key];
@@ -11,7 +17,7 @@ export function sortText(collection, key) {
   });
 };
 
-export function sortNumeric(collection, key) {
+export function sortNumeric(collection: Array<number>, key?: string): Array<number> {
   return collection.sort((a, b) => {
     if (key) {
       a = a[key];
